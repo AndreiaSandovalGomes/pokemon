@@ -1,30 +1,18 @@
 function pokemonBattle(pokemon1, pokemon2){
-  if (pokemon1 === "eeve" && pokemon2 === "eeve") {
-    throw new Error('Os pokemons são iguais');
-  } else if (pokemon1 === "vaporeon" && pokemon2 === "vaporeon") {
-    throw new Error('Os pokemons são iguais');
-  } else if (pokemon1 === "graveler" && pokemon2 === "graveler") {
+  if (pokemon1 === pokemon2) {
     throw new Error('Os pokemons são iguais');
   }
 
-  if (pokemon1 === "graveler") {
-    if (pokemon2 === "eeve") {
-      return "graveler";
-    } else if (pokemon2 === "vaporeon") {
-      return "vaporeon";
-    }
-  } else if (pokemon1 === "eeve") {
-    if (pokemon2 === "graveler") {
-      return "graveler";
-    } else if (pokemon2 === "vaporeon") {
-      return "eeve";
-    }
-  } else if (pokemon1 === "vaporeon") {
-    if (pokemon2 === "eeve") {
-      return "eeve";
-    } else if (pokemon2 === "vaporeon") {
-      return "vaporeon";
-    }
+  const gravelerNaLuta = pokemon1 === "graveler" || pokemon2 === "graveler";
+  const eeveNaLuta = pokemon1 === "eeve" || pokemon2 === "eeve";
+  const vaporeonNaLuta = pokemon1 === "vaporeon" || pokemon2 === "vaporeon";
+
+  if (gravelerNaLuta && eeveNaLuta) {
+    return "graveler";
+  } else if (gravelerNaLuta && vaporeonNaLuta) {
+    return "vaporeon";
+  } else if (eeveNaLuta && vaporeonNaLuta) {
+    return "eeve";
   }
 
   throw new Error('Tem um pokemon não cadastrado');

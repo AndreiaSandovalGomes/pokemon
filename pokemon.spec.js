@@ -13,12 +13,7 @@ describe("pokemon", () => {
     describe("Quando os pokemons forem iguais", () => {
       it("deve me retornar um erro", () => {
         var badFn = function () { pokemon.pokemonBattle("eeve", "eeve") };
-        var badFn3 = function () { pokemon.pokemonBattle("vaporeon", "vaporeon") };
-        var badFn2 = function () { pokemon.pokemonBattle("graveler", "graveler") };
-
         expect(badFn).to.throw('Os pokemons são iguais');
-        expect(badFn2).to.throw('Os pokemons são iguais');
-        expect(badFn3).to.throw('Os pokemons são iguais');
       });
     });
     describe("Quando graveler lutar contra o eeve", () => {
